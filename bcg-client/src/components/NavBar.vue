@@ -3,7 +3,7 @@
     <v-navigation-drawer
       app
       v-model="drawer"
-      class="lighten-2"
+      class="orange lighten-1"
       dark
       disable-resize-watcher
     >
@@ -16,17 +16,20 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar app color="brown darken-4" dark>
+    <v-toolbar app color="orange" dark extended>
       <v-toolbar-side-icon
         class="hidden-md-and-up"
         @click="drawer = !drawer"
       ></v-toolbar-side-icon>
       <v-spacer class="hidden-md-and-up"></v-spacer>
       <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
-      <v-btn flat class="hidden-sm-and-down">Menu</v-btn>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
-      <v-btn flat class="hidden-sm-and-down">SIGN IN</v-btn>
-      <v-btn color="brown lighten-3" class="hidden-sm-and-down">JOIN</v-btn>
+      <v-btn flat class="hidden-sm-and-down">Menu</v-btn>
+      <v-btn flat class="hidden-sm-and-down">About</v-btn>
+      <v-btn flat class="hidden-sm-and-down">Physcians</v-btn>
+      <v-btn flat class="hidden-sm-and-down">Procedures</v-btn>
+      <v-spacer class="hidden-sm-and-down"></v-spacer>
+      <v-btn color="orange lighten-1" class="hidden-sm-and-down">JOIN</v-btn>
     </v-toolbar>
   </span>
 </template>
@@ -36,9 +39,9 @@ export default {
   name: "NavBar",
   data() {
     return {
-      appTitle: "Meal Prep",
+      appTitle: "BCG Oncology",
       drawer: false,
-      items: [{ title: "Menu" }, { title: "Sign In" }, { title: "Join" }]
+      items: [{ title: "Home" }, { title: "About" }, { title: "Physcians" }, { title: "Procedures" }, { title: "Schedule" }]
     };
   }
 };
