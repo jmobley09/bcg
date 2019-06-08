@@ -15,20 +15,17 @@
       <v-spacer class="hidden-md-and-up"></v-spacer>
       <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
-      <v-btn flat class="hidden-sm-and-down" @click="$router.push('/')">Home</v-btn>
-      <v-btn flat class="hidden-sm-and-down" @click="$router.push('about')">About</v-btn>
-      <v-btn flat class="hidden-sm-and-down">Physcians</v-btn>
-      <v-btn flat class="hidden-sm-and-down">Procedures</v-btn>
+      <v-btn flat class="hidden-sm-and-down singlenav" @click="$router.push('/')">Home</v-btn>
       <v-menu :nudge-width="100">
         <template v-slot:activator="{ on }">
           <v-toolbar-title v-on="on">
-            <span class="hidden-sm-and-down">All</span>
+            <span flat class="hidden-sm-and-down navtitle">ABOUT</span>
             <v-icon class="hidden-sm-and-down" dark>arrow_drop_down</v-icon>
           </v-toolbar-title>
         </template>
 
         <v-list>
-          <v-btn flat class="hidden-sm-and-down" @click="$router.push('about')">About</v-btn>
+          <v-btn flat class="hidden-sm-and-down" @click="$router.push('about/staff')">About</v-btn>
         </v-list>
       </v-menu>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
@@ -56,4 +53,11 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.navtitle {
+  font-size: 80%;
+}
+.singlenav {
+  font-size: 120%;
+}
+</style>
