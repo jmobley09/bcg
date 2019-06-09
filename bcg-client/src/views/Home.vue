@@ -1,4 +1,4 @@
-<template> 
+<template>
   <v-content>
     <div>
       <h1>This is home</h1>
