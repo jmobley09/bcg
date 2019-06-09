@@ -15,6 +15,7 @@
       <v-spacer class="hidden-md-and-up"></v-spacer>
       <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
+      <!-- Home Button -->
       <v-btn flat class="hidden-sm-and-down singlenav" @click="$router.push('/')">Home</v-btn>
       <!-- About Dropdown -->
       <v-menu :close-on-content-click="true" :nudge-width="200" offset-x>
@@ -71,8 +72,10 @@
           </v-list>
         </v-card>
       </v-menu>
+      <!-- Physcians Button -->
+      <v-btn flat class="hidden-sm-and-down singlenav" @click="$router.push('/')">Physcians</v-btn>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
-      <v-btn color="orange lighten-1" class="hidden-sm-and-down">JOIN</v-btn>
+      <v-btn color="orange lighten-1" class="hidden-sm-and-down">Schedule</v-btn>
     </v-toolbar>
   </span>
 </template>
@@ -85,7 +88,7 @@ export default {
       appTitle: "BCG Oncology",
       drawer: false,
       items: [
-        { title: "Home", destination: "home" },
+        { title: "Home" },
         { title: "About" },
         { title: "Physcians" },
         { title: "Procedures" },
