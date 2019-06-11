@@ -104,11 +104,12 @@
       <v-btn
         flat
         class="hidden-sm-and-down singlenav"
-        @click="$router.push('/')"
-        >Physcians</v-btn
+        @click="$router.push('/physicians')"
+        >Physicians</v-btn
       >
       <v-spacer class="hidden-sm-and-down"></v-spacer>
       <v-btn color="orange lighten-1" class="hidden-sm-and-down"
+      @click="$router.push({ name: 'schedule' })"
         >Schedule</v-btn
       >
     </v-toolbar>
@@ -125,7 +126,7 @@ export default {
       items: [
         { title: "Home" },
         { title: "About" },
-        { title: "Physcians" },
+        { title: "physicians" },
         { title: "Procedures" },
         { title: "Schedule" }
       ]

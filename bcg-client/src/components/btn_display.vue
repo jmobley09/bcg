@@ -4,27 +4,30 @@
       <v-flex class="container">
         <div class="mainbtn btn-box1">
           <h1>Schedule</h1>
+          <v-icon size="100" dark>date_range</v-icon>
           <h3>
             click below to schedule an appointment
           </h3>
           <br>
-          <v-btn color="orange darken-1" dark large bottom>Schedule</v-btn>
+          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'schedule' })">Schedule</v-btn>
         </div>
         <div class="mainbtn btn-box2">
           <h1>New Patient Forms</h1>
+           <v-icon size="100" dark>assignment</v-icon>
           <h3>
             Fill out the new patient forms
           </h3>
           <br>
-          <v-btn color="orange darken-1" dark large bottom>Continue</v-btn>
+          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'forms' })">Continue</v-btn>
         </div>
         <div class="mainbtn btn-box3">
           <h1>Ask Dr. Lamm</h1>
+           <v-icon size="100" dark>feedback</v-icon>
           <h3>
             Have a question? ask dr.lamm!
           </h3>
           <br>
-          <v-btn color="orange darken-1" dark large bottom>Ask</v-btn>
+          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'ask' })">Ask</v-btn>
         </div>
       </v-flex>
     </v-layout>
@@ -45,8 +48,9 @@ export default {
   position: relative;
   float: left;
   margin-bottom: 4%;
-  padding-left: 10%;
+  padding-left: 9%;
   padding-right: 9.5%;
+  color: azure;
 }
 .btn-box1 {
   background-color: #e5a329;

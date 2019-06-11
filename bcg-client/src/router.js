@@ -8,6 +8,10 @@ import cystectomy from "./views/Cystectomy.vue";
 import clinical from "./views/Clinical.vue";
 import turbt from "./views/Turbt.vue";
 import turp from "./views/Turp.vue";
+import schedule from "./views/Schedule.vue";
+import forms from "./views/Forms.vue";
+import ask from "./views/Ask.vue";
+import physicians from "./views/Physicians.vue";
 
 Vue.use(Router);
 
@@ -19,6 +23,11 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home
+    },
+    {
+      path: "/schedule",
+      name: "schedule",
+      component: schedule
     },
     {
       path: "/about/staff",
@@ -54,6 +63,21 @@ export default new Router({
       path: "/procedures/turp",
       name: "turp",
       component: turp
+    },
+    {
+      path: "/forms",
+      name: "forms",
+      component: forms
+    },
+    {
+      path: "/ask",
+      name: "ask",
+      component: ask
+    },
+    {
+      path: "/physicians",
+      name: "physicians",
+      component: physicians
     }
   ]
 });
