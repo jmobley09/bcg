@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "npm install && npm run build",
+    "heroku-postbuild": "npm install && npm run create",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "create": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
