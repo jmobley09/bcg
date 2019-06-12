@@ -1,44 +1,56 @@
 {
-  "name": "bcg",
-  "version": "1.0.0",
-  "description": "bcg site",
-  "author": "",
+  "name": "bcg-client",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "main": "index.js",
   "dependencies": {
-    "bootstrap": "^3.3.5",
-    "vue": "^1.0.7",
-    "vue-resource": "^0.1.17",
-    "vue-router": "^0.7.5",
-    "vuetify": "^1.5.5"
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuetify": "^1.5.14",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "babel-core": "^6.1.2",
-    "babel-loader": "^6.1.0",
-    "babel-plugin-transform-runtime": "^6.1.2",
-    "babel-preset-es2015": "^6.1.2",
-    "babel-runtime": "^6.0.14",
-    "css-loader": "^2.1.1",
-    "style-loader": "^0.13.0",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "@vue/eslint-config-prettier": "^4.0.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "vue-cli-plugin-vuetify": "^0.5.0",
-    "vue-hot-reload-api": "^1.2.1",
-    "vue-html-loader": "^1.0.0",
-    "vue-loader": "^7.0.1",
-    "vuetify-loader": "^1.0.5",
-    "webpack": "^4.32.1",
-    "webpack-dev-server": "^3.4.1"
+    "vue-template-compiler": "^2.6.10",
+    "vuetify-loader": "^1.0.5"
   },
-  "bugs": {
-    "url": "https://github.com/jmobley09/bcg/issues"
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/prettier"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
   },
-  "homepage": "https://github.com/jmobley09/bcg#readme",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jmobley09/bcg.git"
-  }
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
