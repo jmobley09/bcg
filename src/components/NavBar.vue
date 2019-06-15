@@ -36,27 +36,27 @@
       <!-- About Dropdown -->
       <v-menu :close-on-content-click="true" :nudge-width="200" offset-x>
         <template v-slot:activator="{ on }">
-          <v-btn flat color="white" dark v-on="on">About</v-btn>
+          <v-btn class="hidden-sm-and-down" flat color="white" dark v-on="on">About</v-btn>
         </template>
         <v-card>
           <v-list>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn flat @click="$router.push({ name: 'drlamm' })"
+                <v-btn class="hidden-sm-and-down" flat @click="$router.push({ name: 'drlamm' })"
                   >Doctor Lamm</v-btn
                 >
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn flat @click="$router.push({ name: 'staff' })"
+                <v-btn class="hidden-sm-and-down" flat @click="$router.push({ name: 'staff' })"
                   >Staff</v-btn
                 >
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn flat @click="$router.push({ name: 'clinical' })"
+                <v-btn class="hidden-sm-and-down" flat @click="$router.push({ name: 'clinical' })"
                   >Clinical Trials</v-btn
                 >
               </v-list-tile-content>
@@ -67,34 +67,34 @@
       <!-- Procedures Dropdown -->
       <v-menu :close-on-content-click="true" :nudge-width="200" offset-x>
         <template v-slot:activator="{ on }">
-          <v-btn flat color="white" dark v-on="on">Procedures</v-btn>
+          <v-btn class="hidden-sm-and-down" flat color="white" dark v-on="on">Procedures</v-btn>
         </template>
         <v-card>
           <v-list>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn flat @click="$router.push({ name: 'biopsy' })"
+                <v-btn class="hidden-sm-and-down" flat @click="$router.push({ name: 'biopsy' })"
                   >Biopsy</v-btn
                 >
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn flat @click="$router.push({ name: 'cystectomy' })"
+                <v-btn class="hidden-sm-and-down" flat @click="$router.push({ name: 'cystectomy' })"
                   >Cystectomy</v-btn
                 >
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn flat @click="$router.push({ name: 'turbt' })"
+                <v-btn class="hidden-sm-and-down" flat @click="$router.push({ name: 'turbt' })"
                   >TURBT</v-btn
                 >
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn flat @click="$router.push({ name: 'turp' })">TURP</v-btn>
+                <v-btn class="hidden-sm-and-down" flat @click="$router.push({ name: 'turp' })">TURP</v-btn>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
