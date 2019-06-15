@@ -3,14 +3,17 @@
     <div>
         <h1>Schedule page</h1>
     </div>
+    <schedule_btn></schedule_btn>
   </v-content>
 </template>
 
 <script>
+import schedule_btn from "@/components/schedule_btn";
 
 export default {
   name: "schedule",
   components: {
+    schedule_btn
   }
 };
 </script>
