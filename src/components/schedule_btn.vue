@@ -3,31 +3,22 @@
     <v-layout row wrap align-center>
       <v-flex class="flex-container">
         <div v-bind:class="[activeClass]">
-          <h1>Schedule</h1>
-          <v-icon size="100" dark>date_range</v-icon>
+          <h1>Online</h1>
+          <v-icon size="100" dark>desktop_mac</v-icon>
           <h3>
-            click below to schedule an appointment
+            click below to schedule online
           </h3>
           <br>
-          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'schedule' })">Schedule</v-btn>
+          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'schedule' })">Continue</v-btn>
         </div>
         <div v-bind:class="[activeClass]">
-          <h1>New Patient Forms</h1>
-           <v-icon size="100" dark>assignment</v-icon>
+          <h1>Phone</h1>
+           <v-icon size="100" dark>call</v-icon>
           <h3>
-            Fill out the new patient forms
+            click below to schedule on the Phone
           </h3>
           <br>
-          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'forms' })">Continue</v-btn>
-        </div>
-        <div v-bind:class="[activeClass]">
-          <h1>Ask Dr. Lamm</h1>
-           <v-icon size="100" dark>feedback</v-icon>
-          <h3>
-            Have a question? ask dr.lamm!
-          </h3>
-          <br>
-          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'ask' })">Ask</v-btn>
+          <v-btn color="orange darken-1" dark large bottom >(602) 493-6626 </v-btn>
         </div>
       </v-flex>
     </v-layout>
