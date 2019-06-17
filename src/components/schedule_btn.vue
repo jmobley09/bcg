@@ -9,7 +9,7 @@
             click below to schedule online
           </h3>
           <br>
-          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'schedule' })">Continue</v-btn>
+          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'online' })">Continue</v-btn>
         </div>
         <div v-bind:class="[activeClass]">
           <h1>Phone</h1>
