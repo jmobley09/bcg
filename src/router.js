@@ -12,6 +12,7 @@ import schedule from "./views/Schedule.vue";
 import forms from "./views/Forms.vue";
 import ask from "./views/Ask.vue";
 import physicians from "./views/Physicians.vue";
+import online from "./views/Online.vue";
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       path: "/schedule",
       name: "schedule",
       component: schedule
+    },
+    {
+      path: "/schedule/online",
+      name: "online",
+      component: online
     },
     {
       path: "/about/staff",
