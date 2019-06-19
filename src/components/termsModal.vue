@@ -1,8 +1,8 @@
 <template>
   <div class="text-xs-center">
-    <v-dialog v-model="dialog" width="500">
+    <v-dialog v-model="dialog" persistent width="500">
       <v-card>
-        <v-card-title class="headline grey lighten-2" primary-title>Privacy Policy</v-card-title>
+        <v-card-title class="headline grey lighten-2" primary-title>Terms of Use</v-card-title>
 
         <v-card-text>
           By submitting my question to Ask Dr. Lamm service offered by BCG Oncology, P.C., I agree to abide by the terms and conditions posted on www.bcgoncology.com, including particularly the terms and conditions described below.
