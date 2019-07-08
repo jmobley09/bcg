@@ -1,8 +1,5 @@
 <template>
   <v-content>
-    <div>
-        <h1>Schedule page</h1>
-    </div>
     <schedule_btn></schedule_btn>
   </v-content>
 </template>
