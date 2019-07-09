@@ -1,119 +1,159 @@
 <template>
-  <v-flex class="flex-container">
-    <form>
-      <v-text-field
-        v-model="name"
-        :error-messages="nameErrors"
-        :counter="10"
-        label="Name"
-        required
-        @input="$v.name.$touch()"
-        @blur="$v.name.$touch()"
-      ></v-text-field>
-      <v-text-field
-        v-model="email"
-        :error-messages="emailErrors"
-        label="E-mail"
-        required
-        @input="$v.email.$touch()"
-        @blur="$v.email.$touch()"
-      ></v-text-field>
-      <v-select
-        v-model="select"
-        :items="items"
-        :error-messages="selectErrors"
-        label="Item"
-        required
-        @change="$v.select.$touch()"
-        @blur="$v.select.$touch()"
-      ></v-select>
-      <v-checkbox
-        v-model="checkbox"
-        :error-messages="checkboxErrors"
-        label="Do you agree?"
-        required
-        @change="$v.checkbox.$touch()"
-        @blur="$v.checkbox.$touch()"
-      ></v-checkbox>
-
-      <v-btn @click="submit">submit</v-btn>
-      <v-btn @click="clear">clear</v-btn>
-    </form>
-  </v-flex>
+  <v-layout>
+    <v-flex xs12 sm8 offset-sm2>
+      <v-card>
+        <template>
+  <v-card flat>
+    <v-snackbar
+      v-model="snackbar"
+      absolute
+      top
+      right
+      color="success"
+    >
+      <span>Submission successful!</span>
+      <v-icon dark>check_circle</v-icon>
+    </v-snackbar>
+    <v-form ref="form" @submit.prevent="submit">
+      <v-container grid-list-xl fluid>
+        <v-layout wrap>
+          <v-flex xs12 sm6>
+            <v-text-field
+              v-model="form.name"
+              :rules="rules.name"
+              color="blue darken-2"
+              label="Name"
+              required
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs12 sm6>
+            <v-text-field
+              v-model="form.email"
+              :rules="rules.email"
+              color="blue darken-2"
+              label="Email"
+              required
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs12>
+            <v-textarea
+              v-model="form.bio"
+              :rules="rules.bio"
+              color="blue darken-2"
+              required
+            >
+              <template v-slot:label>
+                <div>
+                  Reason For Visit
+                </div>
+              </template>
+            </v-textarea>
+          </v-flex>
+          <v-flex xs12 sm6>
+            <v-select
+              v-model="form.area"
+              :items="options"
+              :rules="rules.options"
+              color="blue darken-2"
+              label="Area of Concern"
+              required
+            ></v-select>
+          </v-flex>
+          <v-flex xs12 sm6>
+            <v-slider
+              v-model="form.age"
+              :rules="rules.age"
+              color="blue darken-2"
+              label="Age"
+              hint="Be honest"
+              min="1"
+              max="100"
+              thumb-label
+            ></v-slider>
+          </v-flex>
+        </v-layout>
+      </v-container>
+      <v-card-actions>
+        <v-btn flat @click="resetForm">Cancel</v-btn>
+        <v-spacer></v-spacer>
+        <v-btn
+          :disabled="!formIsValid"
+          flat
+          color="primary"
+          type="submit"
+        >Submit</v-btn>
+      </v-card-actions>
+    </v-form>
+  </v-card>
+</template>
+        </form>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 <script>
-import { validationMixin } from "vuelidate";
-import { required, maxLength, email } from "vuelidate/lib/validators";
+import axios from "axios";
+  export default {
+    data () {
+      const defaultForm = Object.freeze({
+        name: '',
+        email: '',
+        bio: '',
+        area: '',
+        age: null
+      })
 
-export default {
-  name: "scheduleForm",
-  mixins: [validationMixin],
+      return {
+        form: Object.assign({}, defaultForm),
+        rules: {
+          age: [
+            val => val < 10 || `I don't believe you!`
+          ],
+          options: [val => (val || '').length > 0 || 'This field is required'],
+          name: [val => (val || '').length > 0 || 'This field is required'],
+          bio: [val => (val || '').length > 0 || 'This field is required'],
+          email: [val => {
+            const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            return pattern.test(val) || 'Invalid e-mail.'
+          }]
+        },
+        options: ['General', 'Procedures', 'Annual Check-in', 'Referals', 'Other'],
+        snackbar: false,
+        defaultForm
+      }
+    },
 
-  validations: {
-    name: { required, maxLength: maxLength(10) },
-    email: { required, email },
-    select: { required },
-    checkbox: {
-      checked(val) {
-        return val;
+    computed: {
+      formIsValid () {
+        return (
+          this.form.name &&
+          this.form.email &&
+          this.form.bio
+        )
+      }
+    },
+
+    methods: {
+      resetForm () {
+        this.form = Object.assign({}, this.defaultForm);
+        this.$refs.form.reset();
+      },
+      submit () {
+        this.snackbar = true;
+        axios.post("/ask", {
+          data: this.form
+        });
+        this.resetForm();
       }
     }
-  },
-
-  data: () => ({
-    name: "",
-    email: "",
-    select: null,
-    items: ["Item 1", "Item 2", "Item 3", "Item 4"],
-    checkbox: false
-  }),
-
-  computed: {
-    checkboxErrors() {
-      const errors = [];
-      if (!this.$v.checkbox.$dirty) return errors;
-      !this.$v.checkbox.checked && errors.push("You must agree to continue!");
-      return errors;
-    },
-    selectErrors() {
-      const errors = [];
-      if (!this.$v.select.$dirty) return errors;
-      !this.$v.select.required && errors.push("Item is required");
-      return errors;
-    },
-    nameErrors() {
-      const errors = [];
-      if (!this.$v.name.$dirty) return errors;
-      !this.$v.name.maxLength &&
-        errors.push("Name must be at most 10 characters long");
-      !this.$v.name.required && errors.push("Name is required.");
-      return errors;
-    },
-    emailErrors() {
-      const errors = [];
-      if (!this.$v.email.$dirty) return errors;
-      !this.$v.email.email && errors.push("Must be valid e-mail");
-      !this.$v.email.required && errors.push("E-mail is required");
-      return errors;
-    }
-  },
-
-  methods: {
-    submit() {
-      this.$v.$touch();
-    },
-    clear() {
-      this.$v.$reset();
-      this.name = "";
-      this.email = "";
-      this.select = null;
-      this.checkbox = false;
-    }
   }
-};
 </script>
 <style scoped>
-.flex-container {
-  display: flex;
+.formLine {
+  max-width: 70%;
+  margin-left: 5%;
+}
+.v-content__wrap {
+  background-color: orange;
 }
 </style>
