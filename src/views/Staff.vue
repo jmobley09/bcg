@@ -1,38 +1,25 @@
 <template>
-  <v-layout row class="container">
+  <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
         <v-toolbar color="teal" dark>
-          <v-toolbar-title>Meet our Staff</v-toolbar-title>
+          <v-toolbar-title class="text-xs-center">Meet Our Staff</v-toolbar-title>
         </v-toolbar>
 
-        <v-list>
-          <v-list-group
-            v-for="item in items"
-            :key="item.title"
-            v-model="item.active"
-            :prepend-icon="item.action"
-            no-action
-          >
-          
-            <template v-slot:activator>
-              <v-list-tile>
-                <v-list-tile-content>
-                  <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-                </v-list-tile-content>
-              </v-list-tile>
-            </template>
+        <v-list subheader>
+          <v-list-tile v-for="item in items" :key="item.title" avatar>
+            <v-list-tile-avatar>
+              <img :src="item.avatar" />
+            </v-list-tile-avatar>
 
-            <v-list-tile v-for="subItem in item.items" :key="subItem.title">
-              <v-list-tile-content>
-                <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
-              </v-list-tile-content>
+            <v-list-tile-content>
+              <v-list-tile-title v-html="item.title"></v-list-tile-title>
+            </v-list-tile-content>
 
-              <v-list-tile-action>
-                <v-icon>{{ subItem.action }}</v-icon>
-              </v-list-tile-action>
-            </v-list-tile>
-          </v-list-group>
+            <v-list-tile-action>
+              <v-icon :color="item.active ? 'teal' : 'grey'">chat_bubble</v-icon>
+            </v-list-tile-action>
+          </v-list-tile>
         </v-list>
       </v-card>
     </v-flex>
@@ -46,44 +33,26 @@ export default {
     return {
       items: [
         {
-          action: "local_activity",
-          title: "Attractions",
-          items: [{ title: "List Item" }]
-        },
-        {
-          action: "restaurant",
-          title: "Dining",
           active: true,
-          items: [
-            { title: "Breakfast & brunch" },
-            { title: "New American" },
-            { title: "Sushi" }
-          ]
+          title: "Jason Oner",
+          avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg"
         },
         {
-          action: "school",
-          title: "Education",
-          items: [{ title: "List Item" }]
+          active: true,
+          title: "Ranee Carlson",
+          avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg"
         },
         {
-          action: "directions_run",
-          title: "Family",
-          items: [{ title: "List Item" }]
+          title: "Cindy Baker",
+          avatar: "https://cdn.vuetifyjs.com/images/lists/3.jpg"
         },
         {
-          action: "healing",
-          title: "Health",
-          items: [{ title: "List Item" }]
+          title: "Ali Connors",
+          avatar: "https://cdn.vuetifyjs.com/images/lists/4.jpg"
         },
         {
-          action: "content_cut",
-          title: "Office",
-          items: [{ title: "List Item" }]
-        },
-        {
-          action: "local_offer",
-          title: "Promotions",
-          items: [{ title: "List Item" }]
+          title: "Travis Howard",
+          avatar: "https://cdn.vuetifyjs.com/images/lists/5.jpg"
         }
       ]
     };
