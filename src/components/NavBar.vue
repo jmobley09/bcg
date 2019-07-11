@@ -3,7 +3,7 @@
     <v-navigation-drawer
       app
       v-model="drawer"
-      class="orange lighten-1"
+      class="#4287f5"
       dark
       disable-resize-watcher
     >
@@ -18,13 +18,13 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar app color="orange" dark>
+    <v-toolbar app color="#3277e6" dark>
       <v-toolbar-side-icon
         class="hidden-md-and-up"
         @click="drawer = !drawer"
       ></v-toolbar-side-icon>
       <v-spacer class="hidden-md-and-up"></v-spacer>
-      <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
+      <v-toolbar-title @click="$router.push('/')">{{ appTitle }}</v-toolbar-title>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
       <!-- Home Button -->
       <v-btn
@@ -108,7 +108,7 @@
         >Physicians</v-btn
       >
       <v-spacer class="hidden-sm-and-down"></v-spacer>
-      <v-btn color="orange lighten-1" class="hidden-sm-and-down"
+      <v-btn color="#DAA520" class="hidden-sm-and-down"
       @click="$router.push({ name: 'schedule' })"
         >Schedule</v-btn
       >

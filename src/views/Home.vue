@@ -1,9 +1,8 @@
 <template>
   <v-content>
-    <div>
-     <carousel></carousel>
+    <div class="fill">
+      <img src="@/assets/depositphotos.jpg"/>
     </div>
-    <br>
     <div>
       <btn_display></btn_display>
     </div>
@@ -11,18 +10,27 @@
 </template>
 
 <script>
-import carousel from "@/components/carousel";
 import btn_display from "@/components/btn_display";
 
 export default {
   name: "Home",
   components: {
-    carousel,
     btn_display
   }
 };
 </script>
 
 <style scoped>
-
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    flex-grow: 1;
+    min-width: 30%;
+    min-height: 50%
+}
 </style>

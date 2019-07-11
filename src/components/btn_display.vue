@@ -9,7 +9,7 @@
             click below to schedule an appointment
           </h3>
           <br>
-          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'schedule' })">Schedule</v-btn>
+          <v-btn color="#DAA520" dark large bottom @click="$router.push({ name: 'schedule' })">Schedule</v-btn>
         </div>
         <div v-bind:class="[activeClass]">
           <h1>New Patient Forms</h1>
@@ -18,7 +18,7 @@
             Fill out the new patient forms
           </h3>
           <br>
-          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'forms' })">Continue</v-btn>
+          <v-btn color="#DAA520" dark large bottom @click="$router.push({ name: 'forms' })">Continue</v-btn>
         </div>
         <div v-bind:class="[activeClass]">
           <h1>Ask Dr. Lamm</h1>
@@ -27,7 +27,7 @@
             Have a question? ask dr.lamm!
           </h3>
           <br>
-          <v-btn color="orange darken-1" dark large bottom @click="$router.push({ name: 'ask' })">Ask</v-btn>
+          <v-btn color="#DAA520" dark large bottom @click="$router.push({ name: 'ask' })">Ask</v-btn>
         </div>
       </v-flex>
     </v-layout>
@@ -58,7 +58,8 @@ export default {
   margin-right: 2%;
 }
 .item {
-  background-color: orange;
+  background-color: #3277e6;
+  color: aliceblue;
   padding-left: 4%;
   padding-right: 4%;
   padding-top: 1%;
