@@ -24,7 +24,9 @@
         @click="drawer = !drawer"
       ></v-toolbar-side-icon>
       <v-spacer class="hidden-md-and-up"></v-spacer>
-      <v-toolbar-title @click="$router.push('/')">{{ appTitle }}</v-toolbar-title>
+      <v-toolbar-title @click="$router.push('/')">
+        <img class="logo" src="@/assets/bcglogo.jpg" alt="logo">
+      </v-toolbar-title>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
       <!-- Home Button -->
       <v-btn
@@ -37,6 +39,7 @@
       <v-menu :close-on-content-click="true" :nudge-width="200" offset-x>
         <template v-slot:activator="{ on }">
           <v-btn class="hidden-sm-and-down links" flat dark v-on="on">About</v-btn>
+          <v-icon>arrow_drop_down</v-icon>
         </template>
         <v-card>
           <v-list>
@@ -68,6 +71,7 @@
       <v-menu :close-on-content-click="true" :nudge-width="200" offset-x>
         <template v-slot:activator="{ on }">
           <v-btn class="hidden-sm-and-down links" flat dark v-on="on">Procedures</v-btn>
+          <v-icon>arrow_drop_down</v-icon>
         </template>
         <v-card>
           <v-list>
@@ -122,7 +126,6 @@ export default {
   name: "NavBar",
   data() {
     return {
-      appTitle: "BCG Oncology",
       drawer: false,
       items: [
         { title: "Home" },
@@ -145,5 +148,10 @@ export default {
     font-weight: bold;
     color: #003B5C;
     font-size: 110%;
+    padding-left: 2%;
+  }
+  .logo {
+    width:100%; 
+    height: auto;
   }
 </style>
