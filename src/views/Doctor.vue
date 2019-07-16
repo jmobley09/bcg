@@ -80,4 +80,7 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
   }
+  .v-card {
+    margin-top: 10%;
+  }
 </style>

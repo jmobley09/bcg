@@ -45,21 +45,21 @@
           <v-list>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn class="hidden-sm-and-down" flat @click="$router.push({ name: 'drlamm' })"
+                <v-btn class="hidden-sm-and-down sub-link" flat @click="$router.push({ name: 'drlamm' })"
                   >Doctor Lamm</v-btn
                 >
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn class="hidden-sm-and-down" flat @click="$router.push({ name: 'staff' })"
+                <v-btn class="hidden-sm-and-down sub-link" flat @click="$router.push({ name: 'staff' })"
                   >Staff</v-btn
                 >
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn class="hidden-sm-and-down" flat @click="$router.push({ name: 'clinical' })"
+                <v-btn class="hidden-sm-and-down sub-link" flat @click="$router.push({ name: 'clinical' })"
                   >Clinical Trials</v-btn
                 >
               </v-list-tile-content>
@@ -77,28 +77,28 @@
           <v-list>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn class="hidden-sm-and-down links" flat @click="$router.push({ name: 'biopsy' })"
+                <v-btn class="hidden-sm-and-down sub-link" flat @click="$router.push({ name: 'biopsy' })"
                   >Biopsy</v-btn
                 >
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn class="hidden-sm-and-down links" flat @click="$router.push({ name: 'cystectomy' })"
+                <v-btn class="hidden-sm-and-down sub-link" flat @click="$router.push({ name: 'cystectomy' })"
                   >Cystectomy</v-btn
                 >
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn class="hidden-sm-and-down links" flat @click="$router.push({ name: 'turbt' })"
+                <v-btn class="hidden-sm-and-down sub-link" flat @click="$router.push({ name: 'turbt' })"
                   >TURBT</v-btn
                 >
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
               <v-list-tile-content>
-                <v-btn class="hidden-sm-and-down links" flat @click="$router.push({ name: 'turp' })">TURP</v-btn>
+                <v-btn class="hidden-sm-and-down sub-link" flat @click="$router.push({ name: 'turp' })">TURP</v-btn>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -142,7 +142,7 @@ export default {
 <style scoped>
   .extend {
     padding-top: 3%;
-    padding-bottom: 1%;
+    padding-bottom: 2%;
   }
   .links {
     font-weight: bold;
@@ -153,5 +153,8 @@ export default {
   .logo {
     width:100%; 
     height: auto;
+  }
+  .sub-link {
+    color: #003B5C;
   }
 </style>

@@ -9,16 +9,16 @@
             click below to schedule online
           </h3>
           <br>
-          <v-btn color="#DAA520" dark large bottom @click="$router.push({ name: 'online' })">Continue</v-btn>
+          <v-btn color="#b87333" dark large bottom @click="$router.push({ name: 'online' })">Continue</v-btn>
         </div>
         <div v-bind:class="[activeClass]">
           <h1>Phone</h1>
            <v-icon size="100" dark>call</v-icon>
           <h3>
-            click below to schedule on the Phone
+            call now to schedule on the Phone
           </h3>
           <br>
-          <v-btn color="#DAA520" dark large bottom >(602) 493-6626 </v-btn>
+          <v-btn color="#b87333" dark large bottom >(602) 493-6626 </v-btn>
         </div>
       </v-flex>
     </v-layout>
@@ -47,13 +47,14 @@ export default {
   align-content: stretch;
   margin-left: 2%;
   margin-right: 2%;
+  margin-top: 5%;
 }
 .item {
-  background-color: #3277e6;
+  background-color: #003B5C;
   color: white;
   padding-left: 4%;
   padding-right: 4%;
-  padding-top: 1%;
+  padding-top: 5%;
   margin: 1%;
   flex-grow: 1;
 }
