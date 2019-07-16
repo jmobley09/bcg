@@ -153,7 +153,8 @@ import axios from "axios";
   max-width: 70%;
   margin-left: 5%;
 }
-.v-content__wrap {
-  background-color: orange;
+.v-card {
+  margin-top: 14%;
 }
+
 </style>

@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <NavBar></NavBar>
+    <v-divider></v-divider>
     <v-content transition="slide-x-transition">
       <router-view></router-view>
     </v-content>
@@ -22,4 +23,5 @@ export default {
 </script>
 
 <style>
+
 </style>
