@@ -1,7 +1,7 @@
 <template>
   <v-content>
     <div class="fill">
-      <img src="@/assets/depositphotos.jpg"/>
+      <img src="@/assets/depositphotos.jpg" />
     </div>
     <div>
       <btn_display></btn_display>
@@ -22,15 +22,15 @@ export default {
 
 <style scoped>
 .fill {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 .fill img {
-    flex-shrink: 0;
-    flex-grow: 1;
-    min-width: 30%;
-    min-height: 50%
+  flex-shrink: 0;
+  flex-grow: 1;
+  min-width: 30%;
+  min-height: 50%;
 }
 </style>
