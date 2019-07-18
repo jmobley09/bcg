@@ -11,6 +11,10 @@
               <span>Submission successful!</span>
               <v-icon dark>check_circle</v-icon>
             </v-snackbar>
+            <v-snackbar v-model="bad_snackbar" absolute top right color="warning">
+              <span>Submission error!</span>
+              <v-icon dark>check_circle</v-icon>
+            </v-snackbar>
             <v-form ref="form" @submit.prevent="submit">
               <v-container grid-list-xl fluid>
                 <v-layout wrap>
