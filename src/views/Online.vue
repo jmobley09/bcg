@@ -9,7 +9,7 @@ import scheduleForm from "@/components/scheduleForm";
 export default {
   name: "online",
   components: {
-      scheduleForm
+    scheduleForm
   }
 };
 </script>

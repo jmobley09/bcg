@@ -3,7 +3,9 @@
     <v-flex xs12 sm6 offset-sm3 class="main">
       <v-card class="space">
         <v-toolbar color="#003b5c" dark>
-          <v-toolbar-title class="text-xs-center">Meet Our Staff</v-toolbar-title>
+          <v-toolbar-title class="text-xs-center"
+            >Meet Our Staff</v-toolbar-title
+          >
         </v-toolbar>
 
         <v-list three-line>
@@ -22,7 +24,9 @@
                   </v-avatar>
                 </v-list-tile-avatar>
                 <v-list-tile-content>
-                  <v-list-tile-title class="indent">{{ item.title }}</v-list-tile-title>
+                  <v-list-tile-title class="indent">{{
+                    item.title
+                  }}</v-list-tile-title>
                 </v-list-tile-content>
               </v-list-tile>
             </template>
@@ -77,7 +81,7 @@ export default {
             { title: "Sushi" }
           ]
         },
-         {
+        {
           avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
           title: "Employee 5",
           items: [{ title: "List Item" }]
@@ -104,7 +108,7 @@ export default {
             { title: "New American" },
             { title: "Sushi" }
           ]
-        },
+        }
       ]
     };
   }

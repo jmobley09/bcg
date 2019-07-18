@@ -2,7 +2,7 @@
   <v-layout class="main">
     <v-flex xs12 sm8 offset-sm2>
       <v-card>
-        <v-toolbar flat color="#003b5c" dark >
+        <v-toolbar flat color="#003b5c" dark>
           <v-toolbar-title>Schedule Appointment</v-toolbar-title>
         </v-toolbar>
         <template>
@@ -72,7 +72,9 @@
               <v-card-actions>
                 <v-btn @click="resetForm">Cancel</v-btn>
                 <v-spacer></v-spacer>
-                <v-btn :disabled="!formIsValid" color="#b87333" @click="submit">Submit</v-btn>
+                <v-btn :disabled="!formIsValid" color="#b87333" @click="submit"
+                  >Submit</v-btn
+                >
               </v-card-actions>
             </v-form>
           </v-card>
@@ -84,7 +86,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: 'scheduleForm',
+  name: "scheduleForm",
   data() {
     const defaultForm = Object.freeze({
       name: "",
@@ -152,7 +154,8 @@ export default {
   max-width: 70%;
   margin-left: 5%;
 }
-.v-text-field, .text {
+.v-text-field,
+.text {
   font-weight: bold;
 }
 </style>

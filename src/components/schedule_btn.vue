@@ -6,7 +6,14 @@
         <v-icon size="100" dark>desktop_mac</v-icon>
         <h3>click below to schedule online</h3>
         <br />
-        <v-btn color="#b87333" dark large bottom @click="$router.push({ name: 'online' })">Continue</v-btn>
+        <v-btn
+          color="#b87333"
+          dark
+          large
+          bottom
+          @click="$router.push({ name: 'online' })"
+          >Continue</v-btn
+        >
       </div>
       <div v-bind:class="[activeClass]">
         <h1>Phone</h1>

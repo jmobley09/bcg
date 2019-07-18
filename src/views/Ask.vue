@@ -1,7 +1,7 @@
 <template>
   <v-content>
-      <terms></terms>
-      <askForm></askForm>
+    <terms></terms>
+    <askForm></askForm>
   </v-content>
 </template>
 
@@ -18,6 +18,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
