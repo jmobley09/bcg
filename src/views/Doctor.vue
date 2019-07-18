@@ -25,10 +25,10 @@
           </v-card-title>
 
           <v-card-actions class="flex">
-            <v-btn flat dark color="#DAA520">Bladder Cancer</v-btn>
-            <v-btn flat dark color="#DAA520">Prostate Cancer</v-btn>
-            <v-btn flat dark color="#DAA520">Kindey Cancer</v-btn>
-            <v-btn flat dark color="#DAA520">Testis Cancer</v-btn>
+            <v-btn dark color="#b87333">Bladder Cancer</v-btn>
+            <v-btn dark color="#b87333">Prostate Cancer</v-btn>
+            <v-btn dark color="#b87333">Kindey Cancer</v-btn>
+            <v-btn dark color="#b87333">Testis Cancer</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>

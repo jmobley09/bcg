@@ -2,10 +2,10 @@
   <v-app>
     <NavBar></NavBar>
     <v-divider></v-divider>
-    <v-content transition="slide-x-transition">
+    <v-content  transition="slide-x-transition">
       <router-view></router-view>
     </v-content>
-    <bottom></bottom>
+      <bottom></bottom>
   </v-app>
 </template>
 
@@ -23,5 +23,4 @@ export default {
 </script>
 
 <style>
-
 </style>

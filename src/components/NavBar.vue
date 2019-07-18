@@ -117,6 +117,7 @@
       @click="$router.push({ name: 'schedule' })"
         >Schedule</v-btn
       >
+    <v-spacer></v-spacer>
     </v-toolbar>
   </span>
 </template>

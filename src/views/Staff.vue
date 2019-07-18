@@ -2,7 +2,7 @@
   <v-layout row>
     <v-flex xs12 sm6 offset-sm3 class="main">
       <v-card class="space">
-        <v-toolbar color="#b87333" dark>
+        <v-toolbar color="#003b5c" dark>
           <v-toolbar-title class="text-xs-center">Meet Our Staff</v-toolbar-title>
         </v-toolbar>
 
