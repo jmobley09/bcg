@@ -1,9 +1,24 @@
-from flask import Blueprint
-from flask_restful import Api
-from resources.Hello import Hello
+#!flask/bin/python
+from flask import Flask, jsonify
 
-api_bp = Blueprint('api', __name__)
-api = Api(api_bp)
+app = Flask(__name__)
 
-#route
-api.add_resource(Hello, '/Hello')
+tasks = [
+    {
+        'id':1,
+        'title': u'Buy Grocergies',
+        'description': u'Milk, Eggs, Cheese',
+        'done': False
+    }
+]
+
+@app.route('/')
+def index():
+    return "Hello World"
+
+@app.route('/api', methods=['GET'])
+def get_tasks():
+    return jsonify({'tasks': tasks})
+
+if __name__ == "__main__":
+    app.run(debug=True)
