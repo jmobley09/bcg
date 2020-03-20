@@ -27,3 +27,10 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Build Flask API
+
+```
+install all requirements listed in requirements.txt with pip
+run app.py in services folder
+```
