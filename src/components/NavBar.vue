@@ -1,47 +1,35 @@
 <template>
   <span>
-    <v-navigation-drawer
-      app
-      v-model="drawer"
-      class="#4287f5"
-      dark
-      disable-resize-watcher
-    >
+    <v-navigation-drawer app v-model="drawer" class="#4287f5" dark disable-resize-watcher>
       <v-list>
         <template v-for="(item, index) in items">
           <v-list-tile :key="index">
-            <v-list-tile-content @click="router.push(item.destination)">{{
+            <v-list-tile-content @click="router.push(item.destination)">
+              {{
               item.title
-            }}</v-list-tile-content>
+              }}
+            </v-list-tile-content>
           </v-list-tile>
           <v-divider :key="`divider-${index}`"></v-divider>
         </template>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar app class="extend">
-      <v-toolbar-side-icon
-        class="hidden-md-and-up"
-        @click="drawer = !drawer"
-      ></v-toolbar-side-icon>
+      <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-spacer class="hidden-md-and-up"></v-spacer>
       <v-toolbar-title @click="$router.push('/')">
         <img class="logo" src="@/assets/bcglogo.jpg" alt="logo" />
       </v-toolbar-title>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
       <!-- Home Button -->
-      <v-btn
-        flat
-        class="hidden-sm-and-down singlenav links"
-        @click="$router.push('/')"
-        >Home</v-btn
-      >
+      <v-btn flat class="hidden-sm-and-down singlenav links" @click="$router.push('/')">Home</v-btn>
       <!-- About Dropdown -->
       <v-menu :close-on-content-click="true" :nudge-width="200" offset-x>
         <template v-slot:activator="{ on }">
-          <v-btn class="hidden-sm-and-down links" flat dark v-on="on"
-            >About</v-btn
-          >
-          <v-icon>arrow_drop_down</v-icon>
+          <v-btn class="hidden-sm-and-down links" flat dark v-on="on">
+            About
+            <v-icon>arrow_drop_down</v-icon>
+          </v-btn>
         </template>
         <v-card>
           <v-list>
@@ -51,8 +39,7 @@
                   class="hidden-sm-and-down sub-link"
                   flat
                   @click="$router.push({ name: 'drlamm' })"
-                  >Doctor Lamm</v-btn
-                >
+                >Doctor Lamm</v-btn>
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
@@ -61,8 +48,7 @@
                   class="hidden-sm-and-down sub-link"
                   flat
                   @click="$router.push({ name: 'staff' })"
-                  >Staff</v-btn
-                >
+                >Staff</v-btn>
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
@@ -71,8 +57,7 @@
                   class="hidden-sm-and-down sub-link"
                   flat
                   @click="$router.push({ name: 'clinical' })"
-                  >Clinical Trials</v-btn
-                >
+                >Clinical Trials</v-btn>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -81,10 +66,10 @@
       <!-- Procedures Dropdown -->
       <v-menu :close-on-content-click="true" :nudge-width="200" offset-x>
         <template v-slot:activator="{ on }">
-          <v-btn class="hidden-sm-and-down links" flat dark v-on="on"
-            >Procedures</v-btn
-          >
-          <v-icon>arrow_drop_down</v-icon>
+          <v-btn class="hidden-sm-and-down links" flat dark v-on="on">
+            Procedures
+            <v-icon>arrow_drop_down</v-icon>
+          </v-btn>
         </template>
         <v-card>
           <v-list>
@@ -94,8 +79,7 @@
                   class="hidden-sm-and-down sub-link"
                   flat
                   @click="$router.push({ name: 'biopsy' })"
-                  >Biopsy</v-btn
-                >
+                >Biopsy</v-btn>
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
@@ -104,8 +88,7 @@
                   class="hidden-sm-and-down sub-link"
                   flat
                   @click="$router.push({ name: 'cystectomy' })"
-                  >Cystectomy</v-btn
-                >
+                >Cystectomy</v-btn>
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
@@ -114,8 +97,7 @@
                   class="hidden-sm-and-down sub-link"
                   flat
                   @click="$router.push({ name: 'turbt' })"
-                  >TURBT</v-btn
-                >
+                >TURBT</v-btn>
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile>
@@ -124,8 +106,7 @@
                   class="hidden-sm-and-down sub-link"
                   flat
                   @click="$router.push({ name: 'turp' })"
-                  >TURP</v-btn
-                >
+                >TURP</v-btn>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -136,8 +117,7 @@
         flat
         class="hidden-sm-and-down singlenav links"
         @click="$router.push('/physicians')"
-        >Physicians</v-btn
-      >
+      >Physicians</v-btn>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
       <!-- schedule Button -->
       <v-btn
@@ -145,8 +125,7 @@
         dark
         class="hidden-sm-and-down"
         @click="$router.push({ name: 'schedule' })"
-        >Schedule</v-btn
-      >
+      >Schedule</v-btn>
       <v-spacer></v-spacer>
     </v-toolbar>
   </span>
@@ -163,10 +142,10 @@ export default {
         { title: "About" },
         { title: "physicians" },
         { title: "Procedures" },
-        { title: "Schedule" }
-      ]
+        { title: "Schedule" },
+      ],
     };
-  }
+  },
 };
 </script>
 

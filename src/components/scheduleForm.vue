@@ -11,7 +11,7 @@
               <span>Submission successful!</span>
               <v-icon dark>check_circle</v-icon>
             </v-snackbar>
-            <v-form ref="form" @submit.prevent="submit">
+            <v-form ref="form" v-model="valid" @submit.prevent="submit">
               <v-container grid-list-xl fluid>
                 <v-layout wrap>
                   <v-flex xs12 sm6>
@@ -72,7 +72,7 @@
               <v-card-actions>
                 <v-btn @click="resetForm">Cancel</v-btn>
                 <v-spacer></v-spacer>
-                <v-btn :disabled="!formIsValid" color="#b87333" @click="submit"
+                <v-btn color="#b87333" @click="submit"
                   >Submit</v-btn
                 >
               </v-card-actions>
@@ -93,13 +93,13 @@ export default {
       email: "",
       bio: "",
       area: "",
-      age: null
+      age: null,
     });
-
     return {
+      valid: true,
       form: Object.assign({}, defaultForm),
       rules: {
-        age: [val => val < 10 || `I don't believe you!`],
+        age: [val => val > 0 || "This field is required"],
         options: [val => (val || "").length > 0 || "This field is required"],
         name: [val => (val || "").length > 0 || "This field is required"],
         bio: [val => (val || "").length > 0 || "This field is required"],
@@ -122,24 +122,24 @@ export default {
     };
   },
 
-  computed: {
-    formIsValid() {
-      return this.form.name && this.form.email && this.form.bio;
-    }
-  },
-
   methods: {
     resetForm() {
       this.form = Object.assign({}, this.defaultForm);
       this.$refs.form.reset();
     },
+    validate () {
+        this.$refs.form.validate()
+      },
     submit() {
-      this.snackbar = true;
-      axios.post("/ask", {
-        data: this.form
-      });
-      this.resetForm();
-    }
+        this.validate();
+        if (this.valid) {
+          this.snackbar = true;
+          axios.post("/ask", {
+            data: this.form
+          });
+          this.resetForm();
+        }
+      }
   }
 };
 </script>

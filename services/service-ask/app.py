@@ -20,5 +20,9 @@ def index():
 def get_tasks():
     return jsonify({'tasks': tasks})
 
+@app.route('/ask', methods=['POST'])
+def validate_form(data):
+    if data is not None:
+        return jsonify({'accepted': True})
 if __name__ == "__main__":
     app.run(debug=True)
